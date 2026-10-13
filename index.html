@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verlobung von Hassib &amp; Horia</title>
+  
+  <!-- Luxus-Schriftarten -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Startbereich mit grünem Samt-Umschlag -->
+  <div class="intro-ansicht" id="intro-ansicht">
+    <p class="intro-titel">EINE BESONDERE EINLADUNG</p>
+    
+    <div class="umschlag-buehne">
+      <!-- Magischer Lichtstrahl / Glow beim Öffnen -->
+      <div class="licht-aura" id="licht-aura"></div>
+
+      <div class="foto-umschlag-box" id="umschlag-kasten">
+        <!-- Das Bild deines grünen Samtumschlags -->
+        <img src="Bilder/umschlag_gruen.png" alt="Smaragdgrüner Samt-Umschlag" class="umschlag-foto">
+        
+        <!-- Die herausgleitende Einladungskarte -->
+        <div class="luxus-karte-gleitend" id="gleitende-karte">
+          <div class="karte-glanz-streif"></div>
+          <div class="innen-rahmen">
+            <span class="mini-datum">30 . 10 . 2026</span>
+            <div class="mini-ornament">❧ ❦ ❧</div>
+            <h2 class="mini-titel">Hassib &amp; Horia</h2>
+            <p class="mini-untertitel">Wir feiern unsere Verlobung</p>
+          </div>
+        </div>
+
+        <!-- Interaktives goldenes Siegel oben auf dem Umschlag -->
+        <button class="siegel-interaktiv" id="siegel" type="button" aria-label="Einladung öffnen">
+          <span class="siegel-text">H&amp;H</span>
+        </button>
+      </div>
+    </div>
+
+    <p class="tipp-text" id="tipp-text">✦ Tippe auf das goldene Siegel, um zu öffnen ✦</p>
+  </div>
+
+  <!-- Hauptinhalt nach dem Öffnen -->
+  <main class="haupt-inhalt" id="haupt-inhalt" hidden>
+
+    <!-- Atmosphärisches Schwanen-Video -->
+    <section class="video-kasten">
+      <video class="schwan-video" autoplay loop muted playsinline>
+        <source src="Bilder/video.mp4" type="video/mp4">
+        Dein Browser unterstützt dieses Video nicht.
+      </video>
+      <div class="video-rahmen-overlay"></div>
+    </section>
+    
+    <!-- Hero / Hauptkarte mit Goldrahmen -->
+    <section class="luxus-karte hero-karte">
+      <div class="gold-doppelrand">
+        <p class="karten-kopf">WIR LADEN EUCH HERZLICH EIN</p>
+        <div class="kranz-icon">❦</div>
+        <h1 class="brautpaar-namen">Hassib &amp; Horia</h1>
+        <p class="feier-art">Unsere Verlobung</p>
+        <div class="gold-trenner"><span>♦</span></div>
+        <p class="haupt-datum">FREITAG, 30. OKTOBER 2026</p>
+      </div>
+    </section>
+
+    <!-- Herzlicher Einladungstext -->
+    <section class="luxus-karte text-karte">
+      <p class="rubrik">WIR SAGEN JA</p>
+      <h2 class="sektion-titel">Lasst uns feiern</h2>
+      <p class="lese-text">
+        Ein ganz besonderer Moment steht uns bevor! Wir möchten den Beginn dieses neuen Lebensabschnitts 
+        im Kreise unserer liebsten Familie und Freunde feiern. Eure Anwesenheit würde diesen Tag für uns unvergesslich machen.
+      </p>
+    </section>
+
+    <!-- Live Countdown in Smaragdgrün & Gold -->
+    <section class="luxus-karte countdown-karte">
+      <p class="rubrik">DIE FEIER BEGINNT IN</p>
+      <div class="countdown-grid">
+        <div class="zeit-box">
+          <span class="zeit-wert" id="tage">--</span>
+          <span class="zeit-label">Tage</span>
+        </div>
+        <div class="zeit-punkt">:</div>
+        <div class="zeit-box">
+          <span class="zeit-wert" id="stunden">--</span>
+          <span class="zeit-label">Stunden</span>
+        </div>
+        <div class="zeit-punkt">:</div>
+        <div class="zeit-box">
+          <span class="zeit-wert" id="minuten">--</span>
+          <span class="zeit-label">Minuten</span>
+        </div>
+        <div class="zeit-punkt">:</div>
+        <div class="zeit-box">
+          <span class="zeit-wert" id="sekunden">--</span>
+          <span class="zeit-label">Sekunden</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zeitplan -->
+    <section class="luxus-karte">
+      <p class="rubrik">SCHEDULE OF EVENTS</p>
+      <h2 class="sektion-titel">Tagesablauf</h2>
+      
+  <div class="zeitstrahl">
+        <div class="event-zeile">
+          <div class="event-uhrzeit">18:00</div>
+          <div class="event-info">
+            <h3>Einlass &amp; Empfang</h3>
+            <p>Willkommensgetränke &amp; herzliche Begrüßung</p>
+          </div>
+        </div>
+
+        <div class="event-zeile">
+          <div class="event-uhrzeit">18:30</div>
+          <div class="event-info">
+            <h3>Die Zeremonie</h3>
+            <p>Offizieller Ringtausch und Feierstunde</p>
+          </div>
+        </div>
+
+        <div class="event-zeile">
+          <div class="event-uhrzeit">21:00</div>
+          <div class="event-info">
+            <h3>Festliches Dinner</h3>
+            <p>Gemeinsames Abendessen &amp; Buffet</p>
+          </div>
+        </div>
+
+        <div class="event-zeile">
+          <div class="event-uhrzeit">Den ganzen Abend</div>
+          <div class="event-info">
+            <h3>Party &amp; Tanz</h3>
+            <p>Musik, Tanzfläche und gute Laune, den ganzen Abend lang</p>
+          </div>
+        </div>
+      </div>
+    <!-- Location & Google Map -->
+    <section class="luxus-karte">
+      <p class="rubrik">LOCATION</p>
+      <h2 class="sektion-titel">Veranstaltungsort</h2>
+  <p class="ort-name">Golden Event Hamburg</p>
+      <p class="ort-strasse">Von-Bargen-Straße 23, 22041 Hamburg-Wandsbek</p>
+
+      <div class="map-kasten">
+        <iframe 
+          title="Google Map Location"
+          src="https://www.google.com/maps?q=Golden+Event+Hamburg,+Von-Bargen-Stra%C3%9Fe+23,+22041+Hamburg&output=embed" 
+          width="100%" 
+          height="220" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Golden+Event+Hamburg,+Von-Bargen-Stra%C3%9Fe+23,+22041+Hamburg" target="_blank" rel="noopener noreferrer" class="btn-karte">
+        📍 Route mit Google Maps planen
+      </a>
+    </section>
+
+   <!-- Dresscode -->
+    <section class="luxus-karte">
+      <p class="rubrik">DRESSCODE</p>
+      <h2 class="sektion-titel">Festlich Elegant</h2>
+      <p class="dresscode-beschreibung">
+        Wir bitten unsere Gäste um elegante Abendgarderobe, gerne in festlichen Farben
+        wie Smaragd, Marine, Bordeaux oder Rosé. Traditionelle Kleidung ist herzlich willkommen.
+      </p>
+      <div class="dresscode-bild-box">
+        <img src="Bilder/dresscode.png" alt="Dresscode-Inspiration: festliche Outfits" class="dresscode-bild">
+      </div>
+    </section>
+
+    <!-- RSVP Zusage-Knopf -->
+    <section class="luxus-karte rsvp-karte">
+      <p class="rubrik">RSVP</p>
+      <h2 class="sektion-titel">Zusage &amp; Rückmeldung</h2>
+      <p class="rsvp-info">
+        Bitte gebt uns bis zum <strong>20. Oktober 2026</strong> Bescheid, 
+        ob wir mit euch rechnen dürfen.
+      </p>
+      <!-- Hier ist die ID rsvp-btn wichtig! -->
+      <button class="rsvp-btn" type="button" id="rsvp-btn">
+        ✉️ Jetzt digital rückmelden
+      </button>
+    </section>
+
+    <footer class="abschluss">
+      <p class="abschluss-ornament">❧ ❦ ❧</p>
+      <p class="abschluss-namen">Hassibullah Noori &amp; Horia Amanzay</p>
+      <p class="abschluss-datum">30.10.2026</p>
+    </footer>
+
+  </main>
+
+  <!-- Pop-up Modal für das Google Formular -->
+  <div class="modal-hintergrund" id="rsvp-modal" style="display: none;">
+    <div class="modal-box">
+      <button class="modal-schliessen" id="modal-schliessen" type="button" aria-label="Schließen">✕</button>
+      <div class="modal-header">
+        <p class="rubrik">RSVP</p>
+        <h3 class="modal-titel">Deine Rückmeldung</h3>
+      </div>
+      
+      <!-- Dein Google-Formular als sauberes Einbettungs-Fenster -->
+      <iframe 
+        id="google-form-iframe"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe4NP9f8DWWMpW1wMyUQvQwEtzFmOFgqaaywtfEDLbej7YKYw/viewform?embedded=true" 
+        width="100%" 
+        height="500" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Wird geladen…
+      </iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

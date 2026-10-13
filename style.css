@@ -1,0 +1,612 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(ellipse at center, #fbf8f3 0%, #efe7dc 100%);
+  color: #1a2f26;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === INTRO MIT SAMT-UMSCHLAG === */
+.intro-ansicht {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 94vh;
+  padding: 20px;
+  width: 100%;
+}
+
+.intro-titel {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #8c7352;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.umschlag-buehne {
+  position: relative;
+  width: min(340px, 92vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.licht-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(255, 230, 150, 0.9) 0%, rgba(212, 175, 55, 0.4) 40%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 1s ease;
+}
+
+.licht-aura.aktiv {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+.foto-umschlag-box {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  filter: drop-shadow(0 18px 35px rgba(10, 30, 22, 0.35));
+}
+
+.umschlag-foto {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.luxus-karte-gleitend {
+  position: absolute;
+  left: 6%;
+  top: 8%;
+  width: 88%;
+  height: 82%;
+  background: #fffdfa;
+  border: 1px solid #d4af37;
+  padding: 8px;
+  z-index: 1;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transform: translateY(0);
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1), z-index 0s 0.3s;
+  overflow: hidden;
+}
+
+.karte-glanz-streif {
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255, 245, 200, 0.7) 50%, rgba(255,255,255,0) 100%);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+.foto-umschlag-box.geoeffnet .karte-glanz-streif {
+  animation: glanzPass 1.2s ease 0.4s forwards;
+}
+
+@keyframes glanzPass {
+  0% { left: -60%; }
+  100% { left: 140%; }
+}
+
+.foto-umschlag-box.geoeffnet .luxus-karte-gleitend {
+  z-index: 5;
+  transform: translateY(-80px);
+}
+
+.innen-rahmen {
+  height: 100%;
+  border: 1px solid #d4af37;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+
+.mini-datum {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #8c7352;
+}
+
+.mini-ornament {
+  color: #c59b4c;
+  font-size: 11px;
+  margin: 3px 0;
+}
+
+.mini-titel {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  margin: 0;
+  color: #0f382c;
+  font-weight: normal;
+}
+
+.mini-untertitel {
+  font-size: 11px;
+  color: #5a665f;
+  margin: 4px 0 0;
+}
+
+.siegel-interaktiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #e5c479;
+  background: radial-gradient(circle at 35% 30%, #fae8ba 0%, #c6953e 50%, #7e5318 100%);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(255,255,255,0.4);
+  cursor: pointer;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+.siegel-interaktiv:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.siegel-text {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #3d2407;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+}
+
+.foto-umschlag-box.geoeffnet .siegel-interaktiv {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.4);
+}
+
+.tipp-text {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #8c7352;
+  margin-top: 26px;
+  text-align: center;
+}
+
+/* === HAUPTSEITE NACH DEM ÖFFNEN === */
+.haupt-inhalt {
+  width: min(440px, 94vw);
+  margin: 10px auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.haupt-inhalt[hidden] {
+  display: none;
+}
+
+.video-kasten {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(15, 56, 44, 0.15);
+  border: 1px solid #d4af37;
+}
+
+.schwan-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-rahmen-overlay {
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(255, 235, 175, 0.6);
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+.luxus-karte {
+  background: #fffdfa;
+  border: 1px solid #eadbc8;
+  border-radius: 4px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(15, 56, 44, 0.06);
+}
+
+.gold-doppelrand {
+  border: 1px solid #d4af37;
+  padding: 24px 14px;
+  position: relative;
+  outline: 1px solid #d4af37;
+  outline-offset: -5px;
+}
+
+.karten-kopf {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #8c7352;
+  margin: 0 0 10px;
+}
+
+.kranz-icon {
+  color: #c59b4c;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.brautpaar-namen {
+  font-family: 'Great Vibes', cursive;
+  font-size: 46px;
+  color: #0f382c;
+  margin: 4px 0 6px;
+  font-weight: normal;
+}
+
+.feier-art {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #4a5c53;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.gold-trenner {
+  color: #c59b4c;
+  font-size: 10px;
+  margin-bottom: 14px;
+}
+
+.haupt-datum {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #0f382c;
+  margin: 0;
+}
+
+.rubrik {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #9e7b4e;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.sektion-titel {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  color: #0f382c;
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+
+.lese-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #3a4b42;
+  margin: 0;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.zeit-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0f382c;
+  color: #fffdfa;
+  min-width: 58px;
+  padding: 10px 4px;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(15, 56, 44, 0.25);
+}
+
+.zeit-wert {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.zeit-label {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f3d795;
+  margin-top: 6px;
+}
+
+.zeit-punkt {
+  font-size: 20px;
+  color: #0f382c;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.zeitstrahl {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+  margin-top: 16px;
+}
+
+.event-zeile {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border-bottom: 1px dashed #ebd8c6;
+  padding-bottom: 14px;
+}
+
+.event-zeile:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.event-uhrzeit {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #a87e45;
+  min-width: 50px;
+}
+
+.event-info h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #0f382c;
+  font-weight: 600;
+}
+
+.event-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #55675e;
+}
+
+.ort-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f382c;
+  margin: 0 0 4px;
+}
+
+.ort-strasse {
+  font-size: 13px;
+  color: #63766d;
+  margin: 0 0 16px;
+}
+
+.map-kasten {
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #ebd6c4;
+  margin-bottom: 16px;
+}
+
+.btn-karte {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0f382c;
+  color: #fffdfa;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  transition: background 0.2s ease;
+}
+
+.btn-karte:hover {
+  background: #175342;
+}
+
+.dresscode-beschreibung {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4b5d54;
+  margin: 0 0 20px;
+}
+
+.palette-grid {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.kreis-spalte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.kreis {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.kreis-spalte span {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #55675e;
+  text-transform: uppercase;
+}
+
+/* RSVP Button */
+.rsvp-karte {
+  background: linear-gradient(to bottom, #fffdfa 0%, #f4ede4 100%);
+}
+
+.rsvp-info {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5d54;
+  margin: 0 0 22px;
+}
+
+.rsvp-btn {
+  padding: 14px 26px;
+  background: #0f382c;
+  color: #fffdfa;
+  border: 2px solid #d4af37;
+  border-radius: 30px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(15, 56, 44, 0.3);
+  transition: all 0.3s ease;
+}
+
+.rsvp-btn:hover {
+  background: #175342;
+  transform: translateY(-2px);
+}
+
+/* === POP-UP MODAL FÜR RSVP === */
+.modal-hintergrund {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 25, 18, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.modal-box {
+  position: relative;
+  background: #fffdfa;
+  width: min(540px, 95vw);
+  max-height: 88vh;
+  border-radius: 8px;
+  border: 1px solid #d4af37;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  padding: 24px 16px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-schliessen {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #8c7352;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.modal-schliessen:hover {
+  color: #0f382c;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.modal-titel {
+  font-family: 'Cinzel', serif;
+  color: #0f382c;
+  font-size: 20px;
+  margin: 4px 0 0;
+}
+
+#google-form-iframe {
+  border: none;
+  border-radius: 4px;
+  flex: 1;
+}
+
+/* Abschluss */
+.abschluss {
+  text-align: center;
+  margin-top: 20px;
+  color: #8c7352;
+}
+
+.abschluss-ornament {
+  color: #c59b4c;
+  margin-bottom: 6px;
+}
+
+.abschluss-namen {
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: #0f382c;
+  margin: 0;
+}
+
+.abschluss-datum {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 6px;
+}
+.dresscode-bild-box {
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(15, 56, 44, 0.12);
+}
+
+.dresscode-bild {
+  width: 100%;
+  height: auto;
+  display: block;
+}
