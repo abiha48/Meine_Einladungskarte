@@ -5,6 +5,33 @@ document.addEventListener("DOMContentLoaded", function () {
   const hauptInhalt = document.getElementById("haupt-inhalt");
   const lichtAura = document.getElementById("licht-aura");
 
+// Sanfte, langsame Scroll-Funktion mit einstellbarer Dauer
+  function sanftNachUntenScrollen(zielElement, dauerInMs) {
+    const zielPosition = zielElement.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distanz = zielPosition - startPosition;
+    let startZeit = null;
+
+    function animationsSchritt(aktuelleZeit) {
+      if (!startZeit) startZeit = aktuelleZeit;
+      const vergangeneZeit = aktuelleZeit - startZeit;
+      const fortschritt = Math.min(vergangeneZeit / dauerInMs, 1);
+
+      // Sanftes Abbremsen (Ease-in-out-Effekt)
+      const easing = fortschritt < 0.5 
+        ? 2 * fortschritt * fortschritt 
+        : -1 + (4 - 2 * fortschritt) * fortschritt;
+
+      window.scrollTo(0, startPosition + distanz * easing);
+
+      if (vergangeneZeit < dauerInMs) {
+        requestAnimationFrame(animationsSchritt);
+      }
+    }
+
+    requestAnimationFrame(animationsSchritt);
+  }
+
   // 1. Umschlag & Siegel Klick-Effekt
   if (siegel) {
     siegel.addEventListener("click", function () {
@@ -16,12 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (tippText) tippText.textContent = "Die Einladung ist geöffnet ✨";
       }, 250);
 
+      // Wartet 1,8 Sekunden, damit man erst den Umschlag und den Goldglanz sieht,
+      // und gleitet dann innerhalb von 2200 ms (2,2 Sekunden) sanft nach unten
       setTimeout(() => {
         if (hauptInhalt) {
           hauptInhalt.hidden = false;
-          hauptInhalt.scrollIntoView({ behavior: "smooth" });
+          sanftNachUntenScrollen(hauptInhalt, 2200);
         }
-      }, 1000);
+      }, 1800);
     });
   }
 
