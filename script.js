@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
           hauptInhalt.hidden = false;
           sanftNachUntenScrollen(hauptInhalt, 4200);
         }
-      }, 1800);
+      }, 2800);
     });
   }
 
