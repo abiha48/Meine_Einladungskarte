@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         if (hauptInhalt) {
           hauptInhalt.hidden = false;
-          sanftNachUntenScrollen(hauptInhalt, 2200);
+          sanftNachUntenScrollen(hauptInhalt, 4200);
         }
       }, 1800);
     });
